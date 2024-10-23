@@ -1,0 +1,66 @@
+@use '../foundation/base';
+
+.l-footer {
+  width: 100%;
+  margin-top: 10rem;
+  background-color: #396600;
+  padding-bottom: .8rem;
+  font-family: "Noto Sans JP";
+  color: #F1EDE4;
+  
+  > p {
+    font-size: 1.2rem;
+    margin-top: 2.4rem;
+    text-align: center;
+  }
+}
+
+.p-footer-item-container {
+  display: flex;
+  justify-content: space-between;
+  width: 84.5rem;
+  margin: 0 auto 0 auto;
+  padding-top: 4.7rem;
+
+  .p-footer-logo {
+
+    img {
+      width: 17rem;
+      height: 9.3rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin-top: 2.4rem;
+    }
+  }
+
+  .p-footer-address {
+
+    ul {
+      list-style-type: none;
+      font-size: 1.6rem;
+    }
+
+    li {
+      line-height: 1.27;
+    }
+
+    li:not(:nth-of-type(1)){
+      margin-top: .8rem;
+    }
+  }
+
+  .p-footer-link {
+
+    a {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1.27;
+    }
+
+    a:not(:nth-of-type(1)) {
+      margin-top: .8rem;
+    }
+  }
+}
