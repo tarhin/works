@@ -1,25 +1,55 @@
-@use '../foundation/base';
+@use '../foundation/base' as *;
+@use '../foundation/mixin' as *;
 
 .l-header {
   width: 100%;
-  height: 80.9rem;
   display: flex;
-  align-items: center;
-  background: url(../img/header_visual.jpg) center / cover;
+  flex-direction: column;
+
+  .p-header-background-container {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 69.3rem;
+  }
+
+  .p-header-background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 69.3rem;
+    background: url('../img/header_visual_sp.png') center / cover;
+  }
 }
 
 .p-item-wrapper {
 
+  > h1 {
+    display: none;
+  }
+
   h1 {
     font-family: "Sawarabi Mincho";
     font-weight: 400;
-    font-size: 3.2rem;
+    font-size: 2rem;
   }
 
   h2 {
     font-family: "Noto Sans JP";
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
+    width: 20.5rem;
+  }
+
+  .p-header-background-container {
+    display: flex;
+    justify-content: center;
+  
+    h1 {
+      margin-top: 8rem;
+      text-align: center;
+    }
   }
 }
 
@@ -28,7 +58,7 @@
   ul {
     list-style-type: none;
     font-family: "Noto Sans JP";
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #37311F;
   }
 
@@ -39,23 +69,86 @@
     color: #F8F6EF;
     background-color: #396600;
     box-shadow: .4rem .4rem .4rem rgba(107, 107, 107, .4);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 1.6rem 4.8rem;
   }
 }
 
 .p-item-wrapper.header {
-  margin-left: 26rem;
-
-  h2 {
-    margin-top: 1.6rem;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .p-goods-wrapper.header {
-    margin-top: 4.8rem;
+    margin-top: 2rem;
 
     a {
-      margin-top: 2.4rem;
+      margin-top: 1.6rem;
+    }
+  }
+
+  .p-header-box-wrapper {
+    background-color: #FCFCFB;
+    padding: 3.2rem 0 3.2rem 4rem;
+  }
+}
+
+@include breakpoint(pc) {
+
+  .l-header {
+    height: 80.9rem;
+    flex-direction: row;
+    align-items: center;
+    background: url('../img/header_visual.jpg') center / cover ;
+
+    .p-header-background-container {
+      display: none;
+    }
+  }
+
+  .p-item-wrapper {
+
+    h2 {
+      font-size: 1.6rem;
+      width: auto;
+      margin-top: 1.6rem;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .p-goods-wrapper {
+    
+    ul {
+      font-size: 1.6rem;
+    }
+
+    a {
+      font-size: 1.6rem;
+    }
+  }
+
+  .p-item-wrapper.header {
+    margin-left: 26rem;
+
+    h1 {
+      display: block;
+      font-size: 3.2rem;
+    }
+
+    .p-header-box-wrapper {
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .p-goods-wrapper.header {
+      margin-top: 4.8rem;
+
+      a {
+        margin-top: 2.4rem;
+      }
     }
   }
 }

@@ -280,7 +280,7 @@ progress {
 }
 
 :root {
-  font-size: 0.6944444444vw;
+  font-size: 2.7777777778vw;
 }
 
 * {
@@ -292,29 +292,58 @@ body {
   background-color: #F1EDE4;
 }
 
+@media (min-width: 768px) {
+  :root {
+    font-size: 0.6944444444vw;
+  }
+}
 .l-header {
   width: 100%;
-  height: 80.9rem;
   display: flex;
-  align-items: center;
-  background: url(../img/header_visual.jpg) center/cover;
+  flex-direction: column;
+}
+.l-header .p-header-background-container {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 69.3rem;
+}
+.l-header .p-header-background {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 69.3rem;
+  background: url("../img/header_visual_sp.png") center/cover;
 }
 
+.p-item-wrapper > h1 {
+  display: none;
+}
 .p-item-wrapper h1 {
   font-family: "Sawarabi Mincho";
   font-weight: 400;
-  font-size: 3.2rem;
+  font-size: 2rem;
 }
 .p-item-wrapper h2 {
   font-family: "Noto Sans JP";
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
+  width: 20.5rem;
+}
+.p-item-wrapper .p-header-background-container {
+  display: flex;
+  justify-content: center;
+}
+.p-item-wrapper .p-header-background-container h1 {
+  margin-top: 8rem;
+  text-align: center;
 }
 
 .p-goods-wrapper ul {
   list-style-type: none;
   font-family: "Noto Sans JP";
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #37311F;
 }
 .p-goods-wrapper a {
@@ -326,23 +355,68 @@ body {
   color: #F8F6EF;
   background-color: #396600;
   box-shadow: 0.4rem 0.4rem 0.4rem rgba(107, 107, 107, 0.4);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 1.6rem 4.8rem;
 }
 
 .p-item-wrapper.header {
-  margin-left: 26rem;
-}
-.p-item-wrapper.header h2 {
-  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .p-item-wrapper.header .p-goods-wrapper.header {
-  margin-top: 4.8rem;
+  margin-top: 2rem;
 }
 .p-item-wrapper.header .p-goods-wrapper.header a {
-  margin-top: 2.4rem;
+  margin-top: 1.6rem;
+}
+.p-item-wrapper.header .p-header-box-wrapper {
+  background-color: #FCFCFB;
+  padding: 3.2rem 0 3.2rem 4rem;
 }
 
+@media (min-width: 768px) {
+  .l-header {
+    height: 80.9rem;
+    flex-direction: row;
+    align-items: center;
+    background: url("../img/header_visual.jpg") center/cover;
+  }
+  .l-header .p-header-background-container {
+    display: none;
+  }
+  .p-item-wrapper h2 {
+    font-size: 1.6rem;
+    width: auto;
+    margin-top: 1.6rem;
+  }
+  .p-item-wrapper h2 br {
+    display: none;
+  }
+  .p-goods-wrapper ul {
+    font-size: 1.6rem;
+  }
+  .p-goods-wrapper a {
+    font-size: 1.6rem;
+  }
+  .p-item-wrapper.header {
+    margin-left: 26rem;
+  }
+  .p-item-wrapper.header h1 {
+    display: block;
+    font-size: 3.2rem;
+  }
+  .p-item-wrapper.header .p-header-box-wrapper {
+    background-color: transparent;
+    padding: 0;
+  }
+  .p-item-wrapper.header .p-goods-wrapper.header {
+    margin-top: 4.8rem;
+  }
+  .p-item-wrapper.header .p-goods-wrapper.header a {
+    margin-top: 2.4rem;
+  }
+}
 .l-main {
   width: 100%;
   display: flex;

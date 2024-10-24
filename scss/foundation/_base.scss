@@ -1,5 +1,7 @@
+@use 'mixin' as *;
+
 :root {
-  font-size: calc(10 / 1440 * 100vw);
+  font-size: calc(10 / 360 * 100vw);
 }
 
 * {
@@ -9,4 +11,10 @@
 
 body {
   background-color: #F1EDE4;
+}
+
+@include breakpoint(pc) {
+  :root {
+    font-size: calc(10 / 1440 * 100vw);
+  }
 }
