@@ -1,45 +1,49 @@
 @use '../foundation/base';
+@use '../foundation/mixin' as *;
 
 .l-footer {
   width: 100%;
-  margin-top: 10rem;
+  margin-top: 6rem;
   background-color: #396600;
-  padding-bottom: .8rem;
+  padding-bottom: 1.2rem;
   font-family: "Noto Sans JP";
   color: #F1EDE4;
   
   > p {
     font-size: 1.2rem;
-    margin-top: 2.4rem;
+    margin-top: 9.1rem;
     text-align: center;
   }
 }
 
 .p-footer-item-container {
   display: flex;
-  justify-content: space-between;
-  width: 84.5rem;
-  margin: 0 auto 0 auto;
-  padding-top: 4.7rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 8rem;
 
   .p-footer-logo {
+    width: 21.7rem;
 
     img {
-      width: 17rem;
-      height: 9.3rem;
+      width: 19.4rem;
+      height: 10.6rem;
     }
 
     p {
-      font-size: 1.6rem;
-      margin-top: 2.4rem;
+      font-size: 1.83rem;
+      margin-top: 1.6rem;
     }
   }
 
   .p-footer-address {
+    width: 21.7rem;
+    margin-top: 3.4rem;
 
     ul {
       list-style-type: none;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
 
     li {
@@ -52,15 +56,70 @@
   }
 
   .p-footer-link {
+    width: 21.7rem;
+    margin-top: 2.4rem;
 
     a {
       display: block;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       line-height: 1.27;
     }
 
     a:not(:nth-of-type(1)) {
       margin-top: .8rem;
+    }
+  }
+}
+
+@include breakpoint(pc) {
+  .l-footer {
+    margin-top: 10rem;
+    padding-bottom: .8rem;
+    
+    > p {
+      font-size: 1.2rem;
+      margin-top: 2.4rem;
+    }
+  }
+  
+  .p-footer-item-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 84.5rem;
+    margin: 0 auto 0 auto;
+    padding-top: 4.7rem;
+  
+    .p-footer-logo {
+      width: auto;
+  
+      img {
+        width: 17rem;
+        height: 9.3rem;
+      }
+  
+      p {
+        font-size: 1.6rem;
+        margin-top: 2.4rem;
+      }
+    }
+  
+    .p-footer-address {
+      width: auto;
+      margin-top: 0;
+  
+      ul {
+        font-size: 1.6rem;
+      }
+    }
+  
+    .p-footer-link {
+      width: auto;
+      margin-top: 0;
+  
+      a {
+        font-size: 1.6rem;
+      }
     }
   }
 }
