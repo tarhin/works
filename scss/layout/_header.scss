@@ -25,10 +25,6 @@
 
 .p-item-wrapper {
 
-  > h1 {
-    display: none;
-  }
-
   h1 {
     font-family: "Sawarabi Mincho";
     font-weight: 400;
@@ -79,6 +75,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  > h1 {
+    display: none;
+  }
+
   .p-goods-wrapper.header {
     margin-top: 2rem;
 
@@ -108,14 +108,14 @@
 
   .p-item-wrapper {
 
+    h1 {
+      font-size: 3.2rem;
+    }
+
     h2 {
       font-size: 1.6rem;
       width: auto;
       margin-top: 1.6rem;
-
-      br {
-        display: none;
-      }
     }
   }
 
@@ -135,7 +135,13 @@
 
     h1 {
       display: block;
-      font-size: 3.2rem;
+    }
+
+    h2 {
+      
+      br {
+        display: none;
+      }
     }
 
     .p-header-box-wrapper {
